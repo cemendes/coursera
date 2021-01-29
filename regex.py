@@ -1,4 +1,4 @@
-# import re
+## import re
 # def check_web_address(text):
 #   pattern = r"^[\w\.\-\+]*.[A-Za-z0-9]{2,3}$"
 #   result = re.search(pattern, text)
