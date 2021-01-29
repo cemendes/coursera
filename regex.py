@@ -1,4 +1,4 @@
-## import re
+# import re
 # def check_web_address(text):
 #   pattern = r"^[\w\.\-\+]*.[A-Za-z0-9]{2,3}$"
 #   result = re.search(pattern, text)
@@ -22,11 +22,11 @@
 # print(check_time("6:60am")) # False
 # print(check_time("five o'clock")) # False
 
-import re
-def contains_acronym(text):
-  pattern = r"\([A-Z0-9][A-Za-z0-9]*\)"
-  result = re.search(pattern, text)
-  return result != None
+# import re
+# def contains_acronym(text):
+#   pattern = r"\([A-Z0-9][A-Za-z0-9]*\)"
+#   result = re.search(pattern, text)
+#   return result != None
 
 # print(contains_acronym("Instant messaging (IM) is a set of communication technologies used for text-based communication")) # True
 # print(contains_acronym("American Standard Code for Information Interchange (ASCII) is a character encoding standard for electronic communication")) # True
