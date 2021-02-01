@@ -1,3 +1,4 @@
+#region
 # import re
 # def check_web_address(text):
 #   pattern = r"^[\w\.\-\+]*.[A-Za-z0-9]{2,3}$"
@@ -33,3 +34,66 @@
 # print(contains_acronym("Please do NOT enter without permission!")) # False
 # print(contains_acronym("PostScript is a fourth-generation programming language (4GL)")) # True
 # print(contains_acronym("Have fun using a self-contained underwater breathing apparatus (Scuba)!")) # True
+
+# import re
+# def transform_record(record):
+#   new_record = re.sub(r"([0-9]{3}-)", r"+1-\1", record, count=1)
+#   return new_record
+
+# print(transform_record("Sabrina Green,802-867-5309,System Administrator")) 
+# # Sabrina Green,+1-802-867-5309,System Administrator
+
+# print(transform_record("Eli Jones,684-3481127,IT specialist")) 
+# # Eli Jones,+1-684-3481127,IT specialist
+
+# print(transform_record("Melody Daniels,846-687-7436,Programmer")) 
+# # Melody Daniels,+1-846-687-7436,Programmer
+
+# print(transform_record("Charlie Rivera,698-746-3357,Web Developer")) 
+# # Charlie Rivera,+1-698-746-3357,Web Developer
+
+# import re
+# def multi_vowel_words(text):
+#   pattern = r"\b\w*[a,e,i,o,u]{3}\w*\b"
+#   result = re.findall(pattern, text)
+#   return result
+
+# print(multi_vowel_words("Life is beautiful")) 
+# # ['beautiful']
+
+# print(multi_vowel_words("Obviously, the queen is courageous and gracious.")) 
+# # ['Obviously', 'queen', 'courageous', 'gracious']
+
+# print(multi_vowel_words("The rambunctious children had to sit quietly and await their delicious dinner.")) 
+# # ['rambunctious', 'quietly', 'delicious']
+
+# print(multi_vowel_words("The order of a data queue is First In First Out (FIFO)")) 
+# # ['queue']
+
+# print(multi_vowel_words("Hello world!")) 
+# # []
+# endregion
+
+# import re
+# def transform_comments(line_of_code):
+#   result = re.sub(r"#+", r"//", line_of_code)
+#   return result
+
+# print(transform_comments("### Start of program")) 
+# # Should be "// Start of program"
+# print(transform_comments("  number = 0   ## Initialize the variable")) 
+# # Should be "  number = 0   // Initialize the variable"
+# print(transform_comments("  number += 1   # Increment the variable")) 
+# # Should be "  number += 1   // Increment the variable"
+# print(transform_comments("  return(number)")) 
+
+
+import re
+def convert_phone_number(phone):
+  result = re.sub(r"([0-9]{3})-([0-9]{3})-([0-9]{4}\.*)$", r"(\1) \2-\3", phone, count=1)
+  return result
+
+print(convert_phone_number("My number is 212-345-9999.")) # My number is (212) 345-9999.
+print(convert_phone_number("Please call 888-555-1234")) # Please call (888) 555-1234
+print(convert_phone_number("123-123-12345")) # 123-123-12345
+print(convert_phone_number("Phone number of Buckingham Palace is +44 303 123 7300")) # Phone number of Buckingham Palace is +44 303 123 7300
