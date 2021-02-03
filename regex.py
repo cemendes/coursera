@@ -88,12 +88,34 @@
 # print(transform_comments("  return(number)")) 
 
 
-import re
-def convert_phone_number(phone):
-  result = re.sub(r"([0-9]{3})-([0-9]{3})-([0-9]{4}\.*)$", r"(\1) \2-\3", phone, count=1)
-  return result
+# import re
+# def convert_phone_number(phone):
+#   result = re.sub(r"([0-9]{3})-([0-9]{3})-([0-9]{4}\.*)$", r"(\1) \2-\3", phone, count=1)
+#   return result
 
-print(convert_phone_number("My number is 212-345-9999.")) # My number is (212) 345-9999.
-print(convert_phone_number("Please call 888-555-1234")) # Please call (888) 555-1234
-print(convert_phone_number("123-123-12345")) # 123-123-12345
-print(convert_phone_number("Phone number of Buckingham Palace is +44 303 123 7300")) # Phone number of Buckingham Palace is +44 303 123 7300
+# print(convert_phone_number("My number is 212-345-9999.")) # My number is (212) 345-9999.
+# print(convert_phone_number("Please call 888-555-1234")) # Please call (888) 555-1234
+# print(convert_phone_number("123-123-12345")) # 123-123-12345
+# print(convert_phone_number("Phone number of Buckingham Palace is +44 303 123 7300")) # Phone number of Buckingham Palace is +44 303 123 7300
+
+import re
+def show_time_of_pid(line):
+  pattern = r'(\w{3}) ([0-9]+ [0-9]+:[0-9]+[0-9]+:[0-9]+) .*([\[0-9+\]])'
+  result = re.search(pattern, line)
+  result = str(result)
+  print(result[0])
+  
+
+print(show_time_of_pid("Jul 6 14:01:23 computer.name CRON[29440]: USER (good_user)")) # Jul 6 14:01:23 pid:29440
+
+# print(show_time_of_pid("Jul 6 14:02:08 computer.name jam_tag=psim[29187]: (UUID:006)")) # Jul 6 14:02:08 pid:29187
+
+# print(show_time_of_pid("Jul 6 14:02:09 computer.name jam_tag=psim[29187]: (UUID:007)")) # Jul 6 14:02:09 pid:29187
+
+# print(show_time_of_pid("Jul 6 14:03:01 computer.name CRON[29440]: USER (naughty_user)")) # Jul 6 14:03:01 pid:29440
+
+# print(show_time_of_pid("Jul 6 14:03:40 computer.name cacheclient[29807]: start syncing from \"0xDEADBEEF\"")) # Jul 6 14:03:40 pid:29807
+
+# print(show_time_of_pid("Jul 6 14:04:01 computer.name CRON[29440]: USER (naughty_user)")) # Jul 6 14:04:01 pid:29440
+
+# print(show_time_of_pid("Jul 6 14:05:01 computer.name CRON[29440]: USER (naughty_user)")) # Jul 6 14:05:01 pid:29440

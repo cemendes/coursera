@@ -28,8 +28,8 @@ def main():
     old domain with the new domain."""
     old_domain, new_domain = 'abc.edu', 'xyz.edu'
     # Define variable for the csv to be used all over the program.
-    csv_file_location= '/Users/eoliveira/Documents/projects/coursera/user_emails.csv'
-    report_file = '/Users/eoliveira/Documents/projects/coursera/update_user_emails.csv'
+    csv_file_location= '/home/eoliveira/Documents/projects/coursera/user_emails.csv'
+    report_file = '/home/eoliveira/Documents/projects/coursera/update_user_emails.csv'
     csv_list = []
     old_domain_email_list = []
     new_domain_email_list = []
@@ -60,5 +60,5 @@ def main():
         writer.writerows(user_data_list)
         output_file.close()
 main()
-# print(contains_domain("dudu@xuxu.com", "eu.com"))
+print(contains_domain("dudu@xuxu.com", "eu.com"))
 # print(replace_domain("dudu@abc.edu", "abc.edu", "xuxu.com"))
