@@ -45,6 +45,7 @@ July 31 03:42:45 mycomputername utility[53726]: INFO I'm sorry Dave. I'm afraid 
 July 31 03:47:07 mycomputername NetworkManager[63805]: WARN Please reboot user
 July 31 04:09:16 mycomputername CRON[52593]: WARN PC Load Letter
 July 31 04:11:32 mycomputername CRON[51253]: ERROR: Failed to start CRON job due to script syntax error. Inform the CRON job owner!
+July 31 04:11:32 mycomputername CRON[51253]: ERROR: Failed to start CRON job due to script syntax error. Inform the CRON job owner!
 July 31 04:11:32 mycomputername jam_tag=psim[84082]: ERROR ID: 10t
 July 31 04:12:05 mycomputername utility[63418]: INFO Successfully connected
 July 31 04:14:22 mycomputername utility[53225]: ERROR I am error
